@@ -1,6 +1,6 @@
 package com.example.mealsapp.model
 
-data class Categories(
+data class Category(
     val idCategory : String,
     val strCategory: String,
     val strCategoryThumb : String,
@@ -8,4 +8,4 @@ data class Categories(
 
 )
 
-data class CategoriesResponse (val categories: List<Categories>)
+data class CategoriesResponse (val categories: List<Category>)
