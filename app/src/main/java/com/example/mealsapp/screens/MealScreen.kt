@@ -9,14 +9,13 @@ import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.lifecycle.viewmodel.compose.viewModel
+import com.example.mealsapp.model.Category
 import com.example.mealsapp.viewModel.MainViewModel
 import com.example.mealsapp.views.CategoryScreen
 
 
 @Composable
-fun MealScreen(modifier: Modifier = Modifier) {
-    val mealViewModel: MainViewModel = viewModel()
-    val viewState by mealViewModel.categoriesState
+fun MealScreen(modifier: Modifier, navigateToDetail: (Category)-> Unit, viewState:MainViewModel.MealsState) {
 
 
     Box(modifier = Modifier.fillMaxSize()) {
@@ -30,7 +29,7 @@ fun MealScreen(modifier: Modifier = Modifier) {
             }
 
             else ->{
-                CategoryScreen(categories = viewState.list)
+                CategoryScreen(categories = viewState.list, navigateToDetail)
             }
 
 
